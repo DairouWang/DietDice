@@ -31,6 +31,7 @@ DerivedData/
 # User-specific workspace settings
 xcuserdata/
 
+
 # User-specific scheme settings
 *.xcuserstate
 
@@ -42,6 +43,13 @@ xcschemes/*.xcscheme
 
 # Xcode Generated Data Store files
 .xcuserdatad/
+
+# Ignore files in .xcodeproj
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcshareddata/xcschemes/
+
 
 # Provisioning Profiles
 *.mobileprovision
