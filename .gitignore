@@ -1,0 +1,77 @@
+# User-specific files
+*.swp
+*.swo
+*~
+
+# Build products
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xctest
+
+# Derived data
+DerivedData/
+.build/
+
+# Various settings and logs
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# Source control history
+*.xccheckout
+*.xcscmblueprint
+
+# User-specific workspace settings
+xcuserdata/
+
+# User-specific scheme settings
+*.xcuserstate
+
+# User Interface State file
+*.storyboardc
+
+# Scheme specific Logs
+xcschemes/*.xcscheme
+
+# Xcode Generated Data Store files
+.xcuserdatad/
+
+# Provisioning Profiles
+*.mobileprovision
+
+# Carthage
+Carthage/Build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Swift Package Manager
+Packages/
+Package.pins
+.build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Bundle artifacts
+*.xcarchive
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# SwiftPM
+.swiftpm/xcode/package.resolved
+
+DietDice.xcodeproj
