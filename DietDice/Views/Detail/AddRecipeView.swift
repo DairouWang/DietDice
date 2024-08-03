@@ -14,6 +14,9 @@ struct AddRecipeView: View {
     @State private var description:String = ""
     @State private var ingredients:String = ""
     @State private var directions:String = ""
+    @State private var navigateToRecipe = false
+    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
 
@@ -44,18 +47,24 @@ struct AddRecipeView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        
+                        dismiss()
                     } label: {
                         Label("Cancel", systemImage: "xmark")
                             .labelStyle(.iconOnly)
                     }
                 }
                 ToolbarItem{
-                    Button{
+                    NavigationLink(isActive: $navigateToRecipe){
+                        RecipeView(recipe: Recipe.all.sorted{$0.datePublished > $1.datePublished}[0])
+                            .navigationBarBackButtonHidden(true)
+                    } label:{
+                        Button{
+                            navigateToRecipe = true
+                        } label: {
+                            Label("Done", systemImage: "checkmark")
+                                .labelStyle(.iconOnly)
+                        }
                         
-                    } label: {
-                        Label("Done", systemImage: "checkmark")
-                            .labelStyle(.iconOnly)
                     }
                     .disabled(name.isEmpty)
                 }
