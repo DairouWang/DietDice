@@ -55,6 +55,30 @@ struct RecipeView: View {
                             Text(recipe.directions)
                         })
                     }
+                    if !recipe.Protein.isEmpty {
+                        VStack(alignment: .leading, spacing:20, content: {
+                            Text("Protein")
+                                .font(.headline)
+                            
+                            Text(recipe.Protein)
+                        })
+                    }
+                    if !recipe.Carb.isEmpty {
+                        VStack(alignment: .leading, spacing:20, content: {
+                            Text("Carb")
+                                .font(.headline)
+                            
+                            Text(recipe.Carb)
+                        })
+                    }                    
+                    if !recipe.Fat.isEmpty {
+                        VStack(alignment: .leading, spacing:20, content: {
+                            Text("Fat")
+                                .font(.headline)
+                            
+                            Text(recipe.Fat)
+                        })
+                    }
                 })
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -66,6 +90,6 @@ struct RecipeView: View {
 
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeView(recipe: Recipe.all[1])
+        RecipeView(recipe: Recipe.all[0])
     }
 }

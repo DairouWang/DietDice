@@ -15,6 +15,9 @@ struct AddRecipeView: View {
     @State private var description:String = ""
     @State private var ingredients:String = ""
     @State private var directions:String = ""
+    @State private var protein:String = ""
+    @State private var carb:String = ""
+    @State private var fat:String = ""
     @State private var navigateToRecipe = false
     
     @Environment(\.dismiss) var dismiss
@@ -43,6 +46,15 @@ struct AddRecipeView: View {
                 }
                 Section(header: Text("Directions")) {
                     TextEditor(text: $directions)
+                }
+                Section(header: Text("Protein")) {
+                    TextEditor(text: $protein)
+                }
+                Section(header: Text("Carb")) {
+                    TextEditor(text: $carb)
+                }
+                Section(header: Text("Fat")) {
+                    TextEditor(text: $fat)
                 }
             }
             .toolbar(content: {
