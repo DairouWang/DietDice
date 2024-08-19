@@ -55,7 +55,7 @@ struct RecipeView: View {
                             Text(recipe.directions)
                         })
                     }
-                    if !recipe.Protein.isEmpty {
+                    if !recipe.protein.isEmpty {
                         VStack(alignment: .leading, spacing:20, content: {
                             Text("Protein")
                                 .font(.headline)
@@ -63,7 +63,7 @@ struct RecipeView: View {
                             Text(recipe.Protein)
                         })
                     }
-                    if !recipe.Carb.isEmpty {
+                    if !recipe.carb.isEmpty {
                         VStack(alignment: .leading, spacing:20, content: {
                             Text("Carb")
                                 .font(.headline)
@@ -71,7 +71,7 @@ struct RecipeView: View {
                             Text(recipe.Carb)
                         })
                     }                    
-                    if !recipe.Fat.isEmpty {
+                    if !recipe.fat.isEmpty {
                         VStack(alignment: .leading, spacing:20, content: {
                             Text("Fat")
                                 .font(.headline)
