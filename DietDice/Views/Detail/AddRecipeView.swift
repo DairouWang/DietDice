@@ -88,6 +88,20 @@ struct AddRecipeView: View {
         }
         .navigationViewStyle(.stack)
     }
+    
+    
+    func saveRecipe() {
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-mm-dd"
+        let datePublished = dateFormatter.string(from: now)
+        
+        let newRecipe = Recipe(name: name, image: "", description: description, ingredients: ingredients, directions: directions, protein: protein, carb: carb, fat: fat, category: selectedCategory.rawValue, datePublished: datePublished, isFavorite: false)
+        
+        recipesVM.addRecipe(recipe: newRecipe)
+    }
+    
+    
 }
 
 #Preview {
@@ -95,17 +109,3 @@ struct AddRecipeView: View {
         .environmentObject(RecipesViewModel())
 }
 
-extension AddRecipeView {
-    private func saveRecipe() {
-        let now = Date()
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "mm-dd-yyyy"
-        
-        let datePublished = dateFormatter.string(from: now)
-        print(datePublished)
-        
-        let recipe = Recipe(name: name, image: "", description: description, ingredients: ingredients, directions: directions, Protein: "", Carb: "", Fat: "", category: selectedCategory.rawValue, datePublished: datePublished)
-        recipesVM.addRecipe(recipe: recipe)
-    }
-}
