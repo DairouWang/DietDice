@@ -60,7 +60,7 @@ struct RecipeView: View {
                             Text("Protein")
                                 .font(.headline)
                             
-                            Text(recipe.Protein)
+                            Text(recipe.protein)
                         })
                     }
                     if !recipe.carb.isEmpty {
@@ -68,7 +68,7 @@ struct RecipeView: View {
                             Text("Carb")
                                 .font(.headline)
                             
-                            Text(recipe.Carb)
+                            Text(recipe.carb)
                         })
                     }                    
                     if !recipe.fat.isEmpty {
@@ -76,7 +76,7 @@ struct RecipeView: View {
                             Text("Fat")
                                 .font(.headline)
                             
-                            Text(recipe.Fat)
+                            Text(recipe.fat)
                         })
                     }
                 })
@@ -90,6 +90,23 @@ struct RecipeView: View {
 
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeView(recipe: Recipe.all[0])
+        RecipeView(recipe: RecipeView_Previews.sampleRecipe)
     }
+    
+    static var sampleRecipe: Recipe {
+            Recipe(row: [
+                "id": 1,
+                "name": "Sample Recipe",
+                "image": "",  // You can add a sample base64 encoded image string here if needed
+                "description": "This is a sample recipe description.",
+                "ingredients": "Ingredient 1, Ingredient 2, Ingredient 3",
+                "directions": "Step 1: Do this. Step 2: Do that.",
+                "protein": "20g",
+                "carb": "30g",
+                "fat": "10g",
+                "category": "Meat",
+                "datePublished": "2024-07-10",
+                "isFavorite": false
+            ])
+        }
 }

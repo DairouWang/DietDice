@@ -7,6 +7,7 @@
 
 import Foundation
 import GRDB
+import UIKit
 
 enum Category: String, CaseIterable, Identifiable{
     var id:String {self.rawValue}
@@ -33,19 +34,23 @@ struct Recipe: Identifiable, Codable, FetchableRecord, PersistableRecord {
     var isFavorite: Bool
     
     init(row: Row) {
-            id = row["id"]
-            name = row["name"]
-            image = row["image"]
-            description = row["description"]
-            ingredients = row["ingredients"]
-            directions = row["directions"]
-            protein = row["Protein"]
-            carb = row["Carb"]
-            fat = row["Fat"]
-            category = row["category"]
-            datePublished = row["datePublished"]
-            isFavorite = row["isFavorite"]
-        }
+        id = row["id"]
+        name = row["name"]
+        image = row["image"]
+        description = row["description"]
+        ingredients = row["ingredients"]
+        directions = row["directions"]
+        protein = row["protein"]
+        carb = row["carb"]
+        fat = row["fat"]
+        category = row["category"]
+        datePublished = row["datePublished"]
+        isFavorite = row["isFavorite"]
+    }
+    var uiImage: UIImage? {
+        guard let imageData = Data(base64Encoded: image) else { return nil }
+        return UIImage(data: imageData)
+    }
 }
 
 //extension Recipe {
